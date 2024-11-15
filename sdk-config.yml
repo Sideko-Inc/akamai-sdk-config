@@ -42,7 +42,7 @@ modules:
       - id: account.get-enrolled-beta-programs
         function_name: list
       - id: account.post-beta-program
-        function_name: create
+        function_name: create_beta
   - path: account.cancel
     operations:
       - id: account.post-cancel-account
@@ -64,7 +64,7 @@ modules:
   - path: account.entity_transfers
     operations:
       - id: account.delete-entity-transfer
-        function_name: delete
+        function_name: remove
       - id: account.get-entity-transfer
         function_name: get
       - id: account.get-entity-transfers
