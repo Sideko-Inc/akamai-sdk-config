@@ -17,6 +17,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: Sideko-Inc/sdk-release@v1.0-rc.1
         with:
           release-type: ${{ inputs.release-type }}
