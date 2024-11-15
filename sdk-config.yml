@@ -1,0 +1,317 @@
+api:
+  - account
+  - object-storage
+  - vpc
+languages:
+  python:
+    sdk_name: linode_py
+  typescript:
+    sdk_name: linode_ts
+servers:
+  - url: https://api.linode.com
+    name: environment
+    default: true
+auths:
+  - id: oauth
+    param: oauth_token
+  - id: personalAccessToken
+    param: token
+modules:
+  - path: account
+    operations:
+      - id: account.get-account
+        function_name: list
+      - id: account.put-account
+        function_name: update
+  - path: account.agreements
+    operations:
+      - id: account.get-account-agreements
+        function_name: list
+      - id: account.post-account-agreements
+        function_name: create
+  - path: account.availability
+    operations:
+      - id: account.get-account-availability
+        function_name: get
+      - id: account.get-availability
+        function_name: list
+  - path: account.betas
+    operations:
+      - id: account.get-enrolled-beta-program
+        function_name: get
+      - id: account.get-enrolled-beta-programs
+        function_name: list
+      - id: account.post-beta-program
+        function_name: create
+  - path: account.cancel
+    operations:
+      - id: account.post-cancel-account
+        function_name: create
+  - path: account.child_accounts
+    operations:
+      - id: account.get-child-account
+        function_name: get
+      - id: account.get-child-accounts
+        function_name: list
+  - path: account.child_accounts.token
+    operations:
+      - id: account.post-child-account-token
+        function_name: create
+  - path: account.credit_card
+    operations:
+      - id: account.post-credit-card
+        function_name: create
+  - path: account.entity_transfers
+    operations:
+      - id: account.delete-entity-transfer
+        function_name: delete
+      - id: account.get-entity-transfer
+        function_name: get
+      - id: account.get-entity-transfers
+        function_name: list
+      - id: account.post-entity-transfer
+        function_name: create
+  - path: account.entity_transfers.accept
+    operations:
+      - id: account.post-accept-entity-transfer
+        function_name: create
+  - path: account.events
+    operations:
+      - id: account.get-event
+        function_name: get
+      - id: account.get-events
+        function_name: list
+  - path: account.events.read
+    operations:
+      - id: account.post-event-read
+        function_name: create
+  - path: account.events.seen
+    operations:
+      - id: account.post-event-seen
+        function_name: create
+  - path: account.invoices
+    operations:
+      - id: account.get-invoice
+        function_name: get
+      - id: account.get-invoices
+        function_name: list
+  - path: account.invoices.items
+    operations:
+      - id: account.get-invoice-items
+        function_name: list
+  - path: account.logins
+    operations:
+      - id: account.get-account-login
+        function_name: get
+      - id: account.get-account-logins
+        function_name: list
+  - path: account.maintenance
+    operations:
+      - id: account.get-maintenance
+        function_name: list
+  - path: account.notifications
+    operations:
+      - id: account.get-notifications
+        function_name: list
+  - path: account.oauth_clients
+    operations:
+      - id: account.delete-client
+        function_name: delete
+      - id: account.get-client
+        function_name: get
+      - id: account.get-clients
+        function_name: list
+      - id: account.post-client
+        function_name: create
+      - id: account.put-client
+        function_name: update
+  - path: account.oauth_clients.reset_secret
+    operations:
+      - id: account.post-reset-client-secret
+        function_name: create
+  - path: account.oauth_clients.thumbnail
+    operations:
+      - id: account.get-client-thumbnail
+        function_name: list
+      - id: account.put-client-thumbnail
+        function_name: update
+  - path: account.payment_methods
+    operations:
+      - id: account.delete-payment-method
+        function_name: delete
+      - id: account.get-payment-method
+        function_name: get
+      - id: account.get-payment-methods
+        function_name: list
+      - id: account.post-payment-method
+        function_name: create
+  - path: account.payment_methods.make_default
+    operations:
+      - id: account.post-make-payment-method-default
+        function_name: create
+  - path: account.payments
+    operations:
+      - id: account.get-payment
+        function_name: get
+      - id: account.get-payments
+        function_name: list
+      - id: account.post-payment
+        function_name: create
+  - path: account.payments.paypal
+    operations:
+      - id: account.post-pay-pal-payment
+        function_name: create
+  - path: account.payments.paypal.execute
+    operations:
+      - id: account.post-execute-pay-pal-payment
+        function_name: create
+  - path: account.promo_codes
+    operations:
+      - id: account.post-promo-credit
+        function_name: create
+  - path: account.service_transfers
+    operations:
+      - id: account.delete-service-transfer
+        function_name: delete
+      - id: account.get-service-transfer
+        function_name: get
+      - id: account.get-service-transfers
+        function_name: list
+      - id: account.post-service-transfer
+        function_name: create
+  - path: account.service_transfers.accept
+    operations:
+      - id: account.post-accept-service-transfer
+        function_name: create
+  - path: account.settings
+    operations:
+      - id: account.get-account-settings
+        function_name: list
+      - id: account.put-account-settings
+        function_name: update
+  - path: account.settings.managed_enable
+    operations:
+      - id: account.post-enable-account-managed
+        function_name: create
+  - path: account.transfer
+    operations:
+      - id: account.get-transfer
+        function_name: list
+  - path: account.users
+    operations:
+      - id: account.delete-user
+        function_name: delete
+      - id: account.get-user
+        function_name: get
+      - id: account.get-users
+        function_name: list
+      - id: account.post-user
+        function_name: create
+      - id: account.put-user
+        function_name: update
+  - path: account.users.grants
+    operations:
+      - id: account.get-user-grants
+        function_name: list
+      - id: account.put-user-grants
+        function_name: update
+  - path: object-storage.buckets
+    operations:
+      - id: object-storage.delete-object-storage-bucket
+        function_name: delete
+      - id: object-storage.get-object-storage-bucket
+        function_name: get_cluster
+      - id: object-storage.get-object-storage-bucketin-cluster
+        function_name: get
+      - id: object-storage.get-object-storage-buckets
+        function_name: list
+      - id: object-storage.post-object-storage-bucket
+        function_name: create
+  - path: object-storage.buckets.access
+    operations:
+      - id: object-storage.post-object-storage-bucket-access
+        function_name: create
+      - id: object-storage.put-storage-bucket-access
+        function_name: update
+  - path: object-storage.buckets.object_acl
+    operations:
+      - id: object-storage.get-object-storage-bucket-acl
+        function_name: list
+      - id: object-storage.put-object-storage-bucket-acl
+        function_name: update
+  - path: object-storage.buckets.object_list
+    operations:
+      - id: object-storage.get-object-storage-bucket-content
+        function_name: list
+  - path: object-storage.buckets.object_url
+    operations:
+      - id: object-storage.post-object-storage-object-url
+        function_name: create
+  - path: object-storage.buckets.ssl
+    operations:
+      - id: object-storage.delete-object-storage-ssl
+        function_name: delete
+      - id: object-storage.get-object-storage-ssl
+        function_name: list
+      - id: object-storage.post-object-storage-ssl
+        function_name: create
+  - path: object-storage.cancel
+    operations:
+      - id: object-storage.post-cancel-object-storage
+        function_name: create
+  - path: object-storage.clusters
+    operations:
+      - id: object-storage.get-object-storage-cluster
+        function_name: get
+      - id: object-storage.get-object-storage-clusters
+        function_name: list
+  - path: object-storage.keys
+    operations:
+      - id: object-storage.delete-object-storage-key
+        function_name: delete
+      - id: object-storage.get-object-storage-key
+        function_name: get
+      - id: object-storage.get-object-storage-keys
+        function_name: list
+      - id: object-storage.post-object-storage-keys
+        function_name: create
+      - id: object-storage.put-object-storage-key
+        function_name: update
+  - path: object-storage.transfer
+    operations:
+      - id: object-storage.get-object-storage-transfer
+        function_name: list
+  - path: object-storage.types
+    operations:
+      - id: object-storage.get-object-storage-types
+        function_name: list
+  - path: vpc
+    operations:
+      - id: vpc.delete-vpc
+        function_name: delete
+      - id: vpc.get-vpc
+        function_name: get
+      - id: vpc.get-vpcs
+        function_name: list
+      - id: vpc.post-vpc
+        function_name: create
+      - id: vpc.put-vpc
+        function_name: update
+  - path: vpc.ips
+    operations:
+      - id: vpc.get-vpc-ips
+        function_name: list_ips
+      - id: vpc.get-vpcs-ips
+        function_name: list
+  - path: vpc.subnets
+    operations:
+      - id: vpc.delete-vpc-subnet
+        function_name: delete
+      - id: vpc.get-vpc-subnet
+        function_name: get
+      - id: vpc.get-vpc-subnets
+        function_name: list
+      - id: vpc.post-vpc-subnet
+        function_name: create
+      - id: vpc.put-vpc-subnet
+        function_name: update
