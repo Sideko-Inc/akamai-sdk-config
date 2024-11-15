@@ -1,0 +1,29 @@
+name: prod-sdk-and-docs-release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release-type:
+        description: 'Release type'
+        required: true
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+        default: 'patch'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Sideko-Inc/sdk-release@v1.0-rc.1
+        with:
+          release-type: ${{ inputs.release-type }}
+          sdk-repos: |-
+            sideko-inc/linode_ts
+            sideko-inc/linode_py
+          github-token: ${{ secrets.AKAMAI_DEMO_GITHUB_PAT }}
+          sideko-api-key: ${{ secrets.SIDEKO_AKAMAI_DEMO_API_KEY }}
+          auto-merge: true
+
