@@ -1,4 +1,4 @@
-name: prod-sdk-and-docs-release
+name: sdk-release
 
 on:
   workflow_dispatch:
@@ -26,4 +26,3 @@ jobs:
           github-token: ${{ secrets.AKAMAI_DEMO_GITHUB_PAT }}
           sideko-api-key: ${{ secrets.SIDEKO_AKAMAI_DEMO_API_KEY }}
           auto-merge: true
-
